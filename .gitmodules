@@ -1,0 +1,4 @@
+[submodule "SolisPhysics"]
+	path = SolisPhysics
+	url = https://github.com/Floyden/SolisPhysics
+	branch = C_rework

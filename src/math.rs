@@ -11,6 +11,7 @@ pub trait Isometry2DFunctions {
 }
 
 pub trait Vec2Functions {
+    fn create_zeroed() -> Self;
     fn normalize(&mut self);
     fn rotate(&mut self, rotation: &Vec2);
     fn rotate_rad(&mut self, radians: Real);
@@ -42,6 +43,10 @@ impl Isometry2DFunctions for Isometry2D {
 }
 
 impl Vec2Functions for Vec2 {
+    fn create_zeroed() -> Self {
+        Self { x: 0.0, y: 0.0 }
+    }
+
     fn normalize(&mut self) {
         unsafe { Sol_Vec2Normalize(self) }
     }

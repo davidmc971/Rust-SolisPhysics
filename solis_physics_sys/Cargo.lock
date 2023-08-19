@@ -216,13 +216,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "43b2853a4d09f215c24cc5489c992ce46052d359b5109343cbafbf26bc62f8a3"
 
 [[package]]
-name = "solis_physics"
-version = "0.1.0"
-dependencies = [
- "solis_physics_sys",
-]
-
-[[package]]
 name = "solis_physics_sys"
 version = "0.1.0"
 dependencies = [

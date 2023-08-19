@@ -1,12 +1,12 @@
 [package]
-name = "solis_physics"
+name = "solis_physics_sys"
 version = "0.1.0"
 edition = "2021"
 license = "MIT"
-description = "Rust bindings for SolisPhysics by Floyden"
+description = "sys-crate generated using bingen for SolisPhysics by Floyden"
 repository = "https://github.com/davidmc971/solis_physics_rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
-[dependencies]
-solis_physics_sys = { version = "*", path = "./solis_physics_sys" }
+[build-dependencies]
+bindgen = "0.66"

@@ -3,6 +3,19 @@ use std::{env, fs, path::PathBuf};
 use bindgen::CargoCallbacks;
 
 fn main() {
+    // Make sure submodule is initialized
+    if !std::process::Command::new("git")
+        .arg("submodule")
+        .arg("update")
+        .output()
+        .expect("could not spawn `git`")
+        .status
+        .success()
+    {
+        // Panic if the command was not successful.
+        panic!("could not update git submodule");
+    }
+
     // Prepare folders
     let out_dir = env::var("OUT_DIR").unwrap();
     let out_path = PathBuf::from(&out_dir);

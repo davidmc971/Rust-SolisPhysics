@@ -27,8 +27,6 @@ jobs:
             ~/.cargo/git/db/
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
-      - name: restore pip download cache
-        uses: syphar/restore-pip-download-cache@v1
       - name: Install Meson
         run: pip3 install --user meson
       - name: Build

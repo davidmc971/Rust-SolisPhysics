@@ -42,7 +42,7 @@ fn main() {
         // Panic if the command was not successful.
         panic!(
             "Could not generate meson build files. Meson stderr: {:?}",
-            &meson_output.stderr
+            &meson_output
         );
     }
 

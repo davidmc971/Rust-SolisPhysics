@@ -8,5 +8,9 @@ repository = "https://github.com/davidmc971/solis_physics_rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+default = ["glam"]
+glam = ["solis_physics_sys/glam"]
+
 [dependencies]
 solis_physics_sys = { version = "*", path = "./solis_physics_sys" }

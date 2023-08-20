@@ -4,6 +4,26 @@
 
 include!(concat!(env!("OUT_DIR"), "/bindgen_ffi_bindings.rs"));
 
+#[cfg(feature = "glam")]
+impl From<glam::Vec2> for Sol_Vec2 {
+    fn from(value: glam::Vec2) -> Self {
+        Self {
+            x: value.x,
+            y: value.y,
+        }
+    }
+}
+
+#[cfg(feature = "glam")]
+impl From<glam::Vec3> for Sol_Vec2 {
+    fn from(value: glam::Vec3) -> Self {
+        Self {
+            x: value.x,
+            y: value.y,
+        }
+    }
+}
+
 #[test]
 fn test_solis_physics() {
     unsafe {

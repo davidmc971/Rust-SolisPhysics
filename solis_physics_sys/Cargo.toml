@@ -8,5 +8,12 @@ repository = "https://github.com/davidmc971/solis_physics_rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[features]
+default = ["glam"]
+glam = ["dep:glam"]
+
+[dependencies]
+glam = { version = "*", optional = true }
+
 [build-dependencies]
 bindgen = "0.66"

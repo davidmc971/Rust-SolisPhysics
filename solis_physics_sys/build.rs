@@ -28,8 +28,7 @@ fn main() {
     println!("cargo:rustc-link-search={}", &linker_path.to_str().unwrap());
     println!("cargo:rustc-link-lib=solis_physics");
 
-    // Create meson build files
-    if !std::process::Command::new("meson")
+    let meson_output = std::process::Command::new("meson")
         .arg("setup")
         .arg(&c_build)
         .arg("SolisPhysics")
@@ -37,12 +36,14 @@ fn main() {
         .arg("--default-library")
         .arg("static")
         .output()
-        .expect("could not spawn `meson`")
-        .status
-        .success()
-    {
+        .expect("could not spawn `meson`");
+    // Create meson build files
+    if !&meson_output.status.success() {
         // Panic if the command was not successful.
-        panic!("could not generate meson build files");
+        panic!(
+            "Could not generate meson build files. Meson stderr: {:?}",
+            &meson_output.stderr
+        );
     }
 
     // Run ninja to compile

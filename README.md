@@ -1,4 +1,6 @@
 # Rust-SolisPhysics
+[![Rust](https://github.com/davidmc971/Rust-SolisPhysics/actions/workflows/rust.yml/badge.svg)](https://github.com/davidmc971/Rust-SolisPhysics/actions/workflows/rust.yml)
+
 Bindings for [Floyden's](https://github.com/Floyden) [SolisPhysics](https://github.com/Floyden/SolisPhysics) in Rust.
 
 Upstream target branch is [`C_rework`](https://github.com/Floyden/SolisPhysics/tree/C_rework) and can be found in a submodule inside [`solis_physics_sys`](./solis_physics_sys).

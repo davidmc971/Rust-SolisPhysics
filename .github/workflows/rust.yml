@@ -28,9 +28,8 @@ jobs:
             target/
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
       - name: Install Meson
-        run: pip3 install --user meson
-      - run: echo "${HOME}/.local/bin" >> $GITHUB_PATH
+        run: sudo pip3 install meson
       - name: Build
-        run: cargo build --verbose
+        run: RUST_BACKTRACE=1 cargo build -vv
       - name: Run tests
         run: cargo test --verbose
